@@ -40,17 +40,17 @@ print("----------------------------------------------------------")
 print("The mean arrival rate per second: %0.2f "%lam)
 print("The mean service rate per second: %0.2f "%mu)
 if (lam <mu):
+    Ls=lam/(mu-lam)
+    Lq=Ls-lam/mu Ws=Ls/lam
+    Wq=Lq/lam
+    print("Average number of objects in the system : %0.2f "%Ls)
+    print("Average number of objects in the conveyor : %0.2f "%Lq)
+    print("Average waiting time of an object in the system : %0.2f secs"%Ws)
+    print("Average waiting time of an object in the conveyor %0.2f secs"%Wq)
+    print("Probability that the system is busy : %0.2f "%(lam/mu) )
+    print("Probability that the system is empty : %0.2f "%(1-lam/mu) )
 else:
-Ls=lam/(mu-lam)
-Lq=Ls-lam/mu Ws=Ls/lam
-Wq=Lq/lam
-print("Average number of objects in the system : %0.2f "%Ls)
-print("Average number of objects in the conveyor : %0.2f "%Lq)
-print("Average waiting time of an object in the system : %0.2f secs"%Ws)
-print("Average waiting time of an object in the conveyor %0.2f secs"%Wq)
-print("Probability that the system is busy : %0.2f "%(lam/mu) )
-print("Probability that the system is empty : %0.2f "%(1-lam/mu) )
-print("Warning! Objects Over flow will happen in the conveyor")
+    print("Warning! Objects Over flow will happen in the conveyor")
 print("-----------------------------------------------------------")
 ```
 
